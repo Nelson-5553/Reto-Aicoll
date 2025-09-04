@@ -11,7 +11,7 @@
   <body >
     <x-nav-bar />
     <div class="max-w-4xl mx-auto p-4">
-        <x-card-state />
+        <x-card-state :empresas="$empresas" />
         <x-success-menssage />
         <x-error-menssage />
         {{-- <x-create-companies /> --}}

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class success-menssage extends Component
+class successmenssage extends Component
 {
     /**
      * Create a new component instance.

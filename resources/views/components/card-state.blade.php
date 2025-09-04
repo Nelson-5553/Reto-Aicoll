@@ -1,3 +1,4 @@
+@props(['empresas'])
 <div>
     <div class="grid grid-cols-3 gap-8 mt-12">
          <!-- Card 1 -->
@@ -15,7 +16,7 @@
             </div>
         </div>
         <div class="p-4">
-            <div class="text-2xl font-bold text-gray-900">2</div>
+            <div class="text-2xl font-bold text-gray-900">{{ $empresas->count() }}</div>
             <p class="text-xs text-gray-600">Registradas en el sistema</p>
         </div>
     </div>
@@ -29,10 +30,16 @@
             </div>
         </div>
         <div class="p-4">
-            <div class="text-2xl font-bold text-[#4A1A5C]">2</div>
+            <div class="text-2xl font-bold text-[#4A1A5C]">{{ $empresas->where('estado', 'activo')->count() }}</div>
             <p class="text-xs text-gray-600">Con estado activo</p>
         </div>
     </div>
+
+    @php
+        $totalEmpresas = $empresas->count();
+        $empresasActivas = $empresas->where('estado', 'activo')->count();
+        $tasaActividad = $totalEmpresas > 0 ? ($empresasActivas / $totalEmpresas) * 100 : 0;
+    @endphp
 
     <!-- Card 3 -->
     <div class="rounded-lg border border-purple-50 bg-purple-50 shadow-sm">
@@ -43,7 +50,7 @@
             </div>
         </div>
         <div class="p-4">
-            <div class="text-2xl font-bold text-[#D946EF]">100%</div>
+            <div class="text-2xl font-bold text-[#D946EF]">{{ $tasaActividad }}%</div>
             <p class="text-xs text-gray-600">Empresas operativas</p>
         </div>
     </div>
