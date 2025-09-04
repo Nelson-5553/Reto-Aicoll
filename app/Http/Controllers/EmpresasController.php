@@ -56,7 +56,7 @@ class EmpresasController extends Controller
      */
     public function edit(Empresas $empresas)
     {
-        //
+        return view('edit', compact('empresas'));
     }
 
     /**

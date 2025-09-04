@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/', [EmpresasController::class, 'index'])->name('empresas.index');
 Route::post('/empresas/create', [EmpresasController::class, 'store'])->name('empresas.store');
+Route::get('/empresas/{empresas}/edit', [EmpresasController::class, 'edit'])->name('empresas.edit');
