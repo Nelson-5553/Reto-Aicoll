@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Empresas;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEmpresaRequest;
+use App\Http\Requests\UpdateEmpresaRequest;
 use App\Helpers\NitHelper;
 
 
@@ -62,18 +63,11 @@ class EmpresasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empresas $empresas)
+    public function update(UpdateEmpresaRequest $request, Empresas $empresas)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'direccion' => 'required|string|max:255',
-            'telefono' => 'required|string|max:20',
-            'estado' => 'required|in:activo,inactivo,suspendido',
-        ]);
+        $empresas->update($request->validated());
 
-        $empresas->update($request->all());
-
-        return redirect()->route('empresas.index')->with('success', 'Empresa actualizada exitosamente.');
+        return redirect()->route('empresas.edit', $empresas)->with('success', 'Empresa actualizada exitosamente.');
     }
 
     /**

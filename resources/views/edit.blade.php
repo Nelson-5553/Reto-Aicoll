@@ -6,8 +6,10 @@
         Volver
     </a>
 
+    <x-success-menssage  />
+    <x-error-menssage />
 
-      <form action="{{ route('empresas.update', $empresas->id) }}" method="POST" class="p-4 md:p-5 bg-white rounded-lg shadow-sm border border-purple-50">
+      <form action="{{ route('empresas.update', $empresas->id) }}" method="POST" class="p-4 md:p-5 bg-white rounded-lg shadow-sm border border-purple-50 mt-4">
     @csrf
     @method('PUT')
     <div class="grid gap-4 mb-4 grid-cols-2 ">
