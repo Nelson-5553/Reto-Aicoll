@@ -35,13 +35,13 @@
         </div>
     </div>
 
+    <!-- Card 3 -->
     @php
         $totalEmpresas = $empresas->count();
         $empresasActivas = $empresas->where('estado', 'activo')->count();
-        $tasaActividad = $totalEmpresas > 0 ? ($empresasActivas / $totalEmpresas) * 100 : 0;
+        $tasaActividad = $totalEmpresas > 0 ? intval(($empresasActivas / $totalEmpresas) * 100) : 0;
     @endphp
 
-    <!-- Card 3 -->
     <div class="rounded-lg border border-purple-50 bg-purple-50 shadow-sm">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2 p-4 border border-purple-50">
             <h3 class="text-sm font-medium text-gray-600">Tasa de Actividad</h3>
