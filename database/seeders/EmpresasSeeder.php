@@ -27,5 +27,29 @@ class EmpresasSeeder extends Seeder
             'direccion' => 'Direccion 2',
             'telefono' => '987654321'
         ]);
+        Empresas::create([
+            'nit' => NitHelper::generarNIT(),
+            'nombre' => 'Empresa 3',
+            'direccion' => 'Direccion 3',
+            'telefono' => '987654321'
+        ]);
+        Empresas::create([
+            'nit' => NitHelper::generarNIT(),
+            'nombre' => 'Empresa 4',
+            'direccion' => 'Direccion 4',
+            'telefono' => '987654321'
+        ]);
+        Empresas::create([
+            'nit' => NitHelper::generarNIT(),
+            'nombre' => 'Empresa 5',
+            'direccion' => 'Direccion 5',
+            'telefono' => '987654321'
+        ]);
+        Empresas::create([
+            'nit' => NitHelper::generarNIT(),
+            'nombre' => 'Empresa 6',
+            'direccion' => 'Direccion 6',
+            'telefono' => '987654321'
+        ]);
     }
 }
