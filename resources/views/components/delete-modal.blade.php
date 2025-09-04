@@ -1,13 +1,8 @@
 <div x-data="{ dangerModalIsOpen: false }">
     <button x-on:click="dangerModalIsOpen = true" type="button"
-        class="whitespace-nowrap rounded-sm text-center text-sm font-medium tracking-wide text-red-500 transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0"><svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-trash-icon lucide-trash">
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-            <path d="M3 6h18" />
-            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-        </svg></button>
+        class="whitespace-nowrap rounded-sm text-center text-sm font-medium tracking-wide cursor-pointer text-red-500 transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">
+        <x-heroicon-o-trash class="w-6 h-6" />
+    </button>
     <div x-cloak x-show="dangerModalIsOpen" x-transition.opacity.duration.200ms
         x-trap.inert.noscroll="dangerModalIsOpen" x-on:keydown.esc.window="dangerModalIsOpen = false"
         x-on:click.self="dangerModalIsOpen = false"

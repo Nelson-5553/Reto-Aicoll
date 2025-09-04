@@ -12,8 +12,8 @@
     @method('PUT')
     <div class="grid gap-4 mb-4 grid-cols-2 ">
         <div class="flex flex-row items-center gap-3 col-span-2 mb-2">
-        <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-600 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw-icon lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+        <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-600 text-white p-1.5">
+          <x-heroicon-o-arrow-path class="w-24 h-24" />
           </div>
 
             <h1 class="flex flex-col">
