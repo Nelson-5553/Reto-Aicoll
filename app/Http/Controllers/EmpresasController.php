@@ -23,14 +23,6 @@ class EmpresasController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
    public function store(StoreEmpresaRequest $request)
@@ -42,16 +34,6 @@ class EmpresasController extends Controller
 
     return redirect()->back()->with('success', 'Empresa creada exitosamente.');
 }
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Empresas $empresas)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
