@@ -1,3 +1,5 @@
+@props(['empresas'])
+
 <div>
 
 <div class="relative overflow-x-auto mt-10">
@@ -15,25 +17,17 @@
 
     <!-- Cuerpo -->
     <tbody>
-      <tr class="bg-white hover:bg-purple-50">
-        <td class="px-6 py-4 font-medium text-gray-900">900123456-7</td>
-        <td class="px-6 py-4">Empresa Alpha</td>
-        <td class="px-6 py-4">Calle 123 #45-67</td>
-        <td class="px-6 py-4">+57 3101234567</td>
+      @foreach ($empresas as $empresa)
+        <tr class="bg-white hover:bg-purple-50">
+          <td class="px-6 py-4 font-medium text-gray-900">{{ $empresa->nit }}</td>
+          <td class="px-6 py-4">{{ $empresa->nombre }}</td>
+          <td class="px-6 py-4">{{ $empresa->direccion }}</td>
+          <td class="px-6 py-4">{{ $empresa->telefono }}</td>
         <td class="px-6 py-4">
-          <span class="bg-[#D946EF] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">Activo</span>
+          <span class="bg-[#D946EF] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">{{ $empresa->estado }}</span>
         </td>
       </tr>
-
-      <tr class="bg-white hover:bg-purple-50">
-        <td class="px-6 py-4 font-medium text-gray-900">901234567-1</td>
-        <td class="px-6 py-4">Gamma Tech</td>
-        <td class="px-6 py-4">Av. Siempre Viva 742</td>
-        <td class="px-6 py-4">+57 3001239876</td>
-        <td class="px-6 py-4">
-          <span class="bg-[#4A1A5C] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">Inactivo</span>
-        </td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
