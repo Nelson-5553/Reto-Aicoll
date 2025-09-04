@@ -4,6 +4,14 @@ Durante la prueba técnica se implementó una solución siguiendo buenas prácti
 
 Se realizaron pruebas unitarias utilizando PHPUnit, asegurando la correcta funcionalidad de los servicios y componentes desarrollados. El manejo de excepciones está presente en los controladores y servicios, garantizando respuestas adecuadas ante errores y validaciones de datos.
 
+### Despliegue
+
+El proyecto está disponible en el siguiente enlace:
+
+**[Enlace](tu_enlace_aqui)**
+
+---
+
 ### Componentes y Librerías Utilizadas
 
 - **Laravel**: Framework principal para la estructura del proyecto y gestión de rutas, controladores y modelos.
@@ -13,11 +21,7 @@ Se realizaron pruebas unitarias utilizando PHPUnit, asegurando la correcta funci
 - **PHPUnit**: Framework de pruebas unitarias integrado en Laravel.
 - **Vite**: Para la gestión y compilación de assets frontend.
 
-### Despliegue
-
-El proyecto está disponible en el siguiente enlace:
-
-**[Enlace](tu_enlace_aqui)**
+---
 
 ### Descripción de Componentes
 
@@ -43,7 +47,8 @@ A continuación se detallan los componentes ubicados en `resources/views/compone
 
 - **success-menssage.blade.php**  
   Muestra mensajes de éxito tras operaciones satisfactorias como creación, edición o eliminación
-
+  
+---
 
 ### Estructura básica del NIT
 
