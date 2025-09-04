@@ -60,35 +60,30 @@
                                     @if ($empresa->estado === 'activo')
                                         <div class="p-4 text-center">
                                             <h3 id="dangerModalTitle"
-                                                class="mb-2 font-semibold tracking-wide text-neutral-900 dark:text-white">
+                                                class="mb-2 font-semibold tracking-wide text-neutral-900">
                                                 Desactivar Empresa</h3>
                                             <p>¿Estás seguro de que deseas desactivar esta empresa? Es requerido realizar esta acción.</p>
                                         </div>
-                                        <div
-                                            class="flex items-center justify-center border-neutral-300 p-4 dark:border-neutral-700">
+                                        <div class="flex items-center justify-center border-neutral-300 p-4">
                                             <button x-on:click="dangerModalIsOpen = false" type="button"
                                                 class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Volver</button>
                                         </div>
-
                                     @else
-                                    <div class="px-4 text-center">
-                                        <h3 id="dangerModalTitle"
-                                            class="mb-2 font-semibold tracking-wide text-neutral-900 dark:text-white">
-                                            Eliminar Empresa</h3>
-                                        <p>¿Estás seguro de que deseas eliminar esta empresa? Este acción no se puede deshacer.</p>
-                                    </div>
-                                    <!-- Dialog Footer -->
-                                    <form action="{{ route('empresas.destroy', $empresa) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <div
-                                            class="flex items-center justify-center border-neutral-300 p-4 dark:border-neutral-700">
-                                            <button x-on:click="dangerModalIsOpen = false" type="submit"
-                                                class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Eliminar Empresa</button>
+                                        <div class="px-4 text-center">
+                                            <h3 id="dangerModalTitle"
+                                                class="mb-2 font-semibold tracking-wide text-neutral-900">
+                                                Eliminar Empresa</h3>
+                                            <p>¿Estás seguro de que deseas eliminar esta empresa? Este acción no se puede deshacer.</p>
                                         </div>
-                                    </form>
-
-                                    </div>
+                                        <!-- Dialog Footer -->
+                                        <form action="{{ route('empresas.destroy', $empresa) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class="flex items-center justify-center border-neutral-300 p-4">
+                                                <button x-on:click="dangerModalIsOpen = false" type="submit"
+                                                    class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Eliminar Empresa</button>
+                                            </div>
+                                        </form>
                                     @endif
                                 </x-delete-modal>
                             </td>
