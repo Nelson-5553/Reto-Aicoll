@@ -24,7 +24,11 @@
           <td class="px-6 py-4">{{ $empresa->direccion }}</td>
           <td class="px-6 py-4">{{ $empresa->telefono }}</td>
         <td class="px-6 py-4">
-          <span class="bg-[#D946EF] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">{{ $empresa->estado }}</span>
+            @if ($empresa->estado === 'Activo')
+              <span class="bg-[#4A1A5C] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">{{ $empresa->estado }}</span>
+            @else
+              <span class="bg-[#D946EF] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">{{ $empresa->estado }}</span>
+            @endif
         </td>
       </tr>
       @endforeach
