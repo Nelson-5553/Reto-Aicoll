@@ -1,66 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Resultados y Estilo de Código
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Durante la prueba técnica se implementó una solución siguiendo buenas prácticas de desarrollo en Laravel y PHP. El código está estructurado en capas, utilizando patrones de diseño y manteniendo una nomenclatura clara y descriptiva para variables y funciones. Se aplicó programación funcional donde fue pertinente y se priorizó la legibilidad y mantenibilidad del código.
 
-## About Laravel
+Se realizaron pruebas unitarias utilizando PHPUnit, asegurando la correcta funcionalidad de los servicios y componentes desarrollados. El manejo de excepciones está presente en los controladores y servicios, garantizando respuestas adecuadas ante errores y validaciones de datos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Componentes y Librerías Utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel**: Framework principal para la estructura del proyecto y gestión de rutas, controladores y modelos.
+- **Livewire**: Para la creación de componentes interactivos en el frontend.
+- **Tailwind CSS**: Utilizado para el diseño responsivo y estilizado de la interfaz.
+- **Heroicons**: Para iconografía en los componentes visuales.
+- **PHPUnit**: Framework de pruebas unitarias integrado en Laravel.
+- **Vite**: Para la gestión y compilación de assets frontend.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Despliegue
 
-## Learning Laravel
+El proyecto está disponible en el siguiente enlace:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**[Enlace](tu_enlace_aqui)**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Descripción de Componentes
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+A continuación se detallan los componentes ubicados en `resources/views/components` y en `resources/views/livewire` y su función dentro del sistema:
 
-## Laravel Sponsors
+- **card-state.blade.php**  
+  Muestra tarjetas con estadísticas generales sobre las empresas (total, activas, tasa de actividad).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **companies-table.blade.php**  
+  Renderiza una tabla con la información de las empresas, mostrando sus datos principales.
 
-### Premium Partners
+- **searh-companies.blade.php**  
+  Proporciona un modal para crear nuevas empresas, incluyendo el formulario de registro.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **delete-modal.blade.php**  
+  Modal de confirmación para eliminar o desactivar empresas, mostrando advertencias y opciones de acción.
 
-## Contributing
+- **error-menssage.blade.php**  
+  Presenta mensajes de error y validación en la interfaz, mostrando incidencias detectadas en formularios.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **nav-bar.blade.php**  
+  Barra de navegación principal del sistema, con el título y branding del reto técnico.
 
-## Code of Conduct
+- **success-menssage.blade.php**  
+  Muestra mensajes de éxito tras operaciones satisfactorias como creación, edición o eliminación
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+### Estructura básica del NIT
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Parte principal: un número (puede ser cédula, identificación de empresa, etc.).
+- DV (Dígito de Verificación): un número del 0 al 9 que se obtiene aplicando un cálculo sobre la parte principal.
 
-## License
+### NitHelper: Generación y Validación del NIT
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El componente `NitHelper` es responsable de la generación automática y validación del NIT (Número de Identificación Tributaria) para cada empresa registrada en el sistema.
+
+- **Generación del NIT**: Al crear una nueva empresa, el sistema utiliza `NitHelper::generarNIT()` para asignar un NIT único. Este NIT consta de una parte principal (número base) y un Dígito de Verificación (DV), calculado mediante un algoritmo específico que garantiza la validez y unicidad del identificador.
+
+- **Cálculo del Dígito de Verificación (DV)**: El DV es un número entre 0 y 9, obtenido aplicando un cálculo matemático sobre la parte principal del NIT. Este proceso ayuda a prevenir errores de digitación y asegura la integridad de los datos.
+
+- **Validación de unicidad**: Antes de guardar una empresa, se verifica que el NIT generado no esté duplicado en la base de datos, cumpliendo con los requisitos técnicos del reto.
+
+El uso de `NitHelper` centraliza la lógica relacionada con el NIT, facilitando el mantenimiento y la extensión del sistema en el futuro.
