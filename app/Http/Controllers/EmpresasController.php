@@ -64,7 +64,16 @@ class EmpresasController extends Controller
      */
     public function update(Request $request, Empresas $empresas)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'direccion' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20',
+            'estado' => 'required|in:activo,inactivo,suspendido',
+        ]);
+
+        $empresas->update($request->all());
+
+        return redirect()->route('empresas.index')->with('success', 'Empresa actualizada exitosamente.');
     }
 
     /**
