@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
   </head>
-  <body>
-    <h1 class="text-3xl text-red-500 font-bold underline">
-      Hello world!
-    </h1>
+  <body >
+    <x-nav-bar />
+    <div class="max-w-4xl mx-auto">
+      <x-card-state />
+    </div>
   </body>
 </html>
