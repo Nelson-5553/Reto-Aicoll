@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Empresas;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class EmpresasController extends Controller
     public function index()
     {
         $empresas = Empresas::all();
+        // dd($empresas);
         return view('welcome', compact('empresas'));
     }
 

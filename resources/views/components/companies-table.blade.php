@@ -34,7 +34,9 @@
       @endforeach
     </tbody>
   </table>
-</div>
+    <div class="p-4">
+        {{-- {{ $empresas->links() }} --}}
+    </div>
 
 
 </div>
