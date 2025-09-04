@@ -46,10 +46,52 @@
                                 @endif
                             </td>
                             <td class="flex flex-row px-6 py-4 gap-2">
-                                <a href="{{ route('empresas.edit', $empresa) }}"
-                                    class="text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg></a>
-                            <x-delete-modal />
-                                </td>
+                                <a href="{{ route('empresas.edit', $empresa) }}" class="text-blue-500"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-square-pen-icon lucide-square-pen">
+                                        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                        <path
+                                            d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+                                    </svg></a>
+                                <x-delete-modal>
+                                    <!-- Dialog Body -->
+                                    @if ($empresa->estado === 'activo')
+                                        <div class="p-4 text-center">
+                                            <h3 id="dangerModalTitle"
+                                                class="mb-2 font-semibold tracking-wide text-neutral-900 dark:text-white">
+                                                Desactivar Empresa</h3>
+                                            <p>¿Estás seguro de que deseas desactivar esta empresa? Es requerido realizar esta acción.</p>
+                                        </div>
+                                        <div
+                                            class="flex items-center justify-center border-neutral-300 p-4 dark:border-neutral-700">
+                                            <button x-on:click="dangerModalIsOpen = false" type="button"
+                                                class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Volver</button>
+                                        </div>
+
+                                    @else
+                                    <div class="px-4 text-center">
+                                        <h3 id="dangerModalTitle"
+                                            class="mb-2 font-semibold tracking-wide text-neutral-900 dark:text-white">
+                                            Eliminar Empresa</h3>
+                                        <p>¿Estás seguro de que deseas eliminar esta empresa? Este acción no se puede deshacer.</p>
+                                    </div>
+                                    <!-- Dialog Footer -->
+                                    <form action="{{ route('empresas.destroy', $empresa) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div
+                                            class="flex items-center justify-center border-neutral-300 p-4 dark:border-neutral-700">
+                                            <button x-on:click="dangerModalIsOpen = false" type="submit"
+                                                class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Eliminar Empresa</button>
+                                        </div>
+                                    </form>
+
+                                    </div>
+                                    @endif
+                                </x-delete-modal>
+                            </td>
                         </tr>
                     @endforeach
                 @endif
