@@ -2,7 +2,7 @@
 
 <!-- Modal toggle -->
 <div class="flex justify-end">
-<button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-12" type="button">
+<button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
   Crear Empresa
 </button>
 </div>
