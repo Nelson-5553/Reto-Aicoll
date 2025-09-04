@@ -63,6 +63,6 @@
                 Livewire.dispatch('searchChanged', {
                     value
                 });
-            }, 200); // 400ms de espera
+            }, 200); // 200ms de espera
         }
     </script>
