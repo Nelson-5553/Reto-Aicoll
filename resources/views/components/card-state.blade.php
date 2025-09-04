@@ -1,6 +1,6 @@
 @props(['empresas'])
 <div>
-    <div class="grid grid-cols-3 gap-8 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
          <!-- Card 1 -->
     <div class="rounded-lg border border-purple-50 bg-purple-50 shadow-sm">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2 p-4 border border-purple-50">

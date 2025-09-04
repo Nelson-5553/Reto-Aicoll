@@ -9,11 +9,11 @@
     <x-success-menssage  />
     <x-error-menssage />
 
-      <form action="{{ route('empresas.update', $empresas->id) }}" method="POST" class="p-4 md:p-5 bg-white rounded-lg shadow-sm border border-purple-50 mt-4">
+    <form action="{{ route('empresas.update', $empresas->id) }}" method="POST" class="p-4 md:p-5 bg-white rounded-lg shadow-sm border border-purple-50 mt-4 max-w-4xl mx-auto w-full">
     @csrf
     @method('PUT')
-    <div class="grid gap-4 mb-4 grid-cols-2 ">
-        <div class="flex flex-row items-center gap-3 col-span-2 mb-2">
+    <div class="grid gap-4 mb-4 grid-cols-1 md:grid-cols-2">
+    <div class="flex flex-col md:flex-row items-center gap-3 col-span-1 md:col-span-2 mb-2 text-center md:text-left">
         <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-600 text-white p-1.5">
           <x-heroicon-o-arrow-path class="w-24 h-24" />
           </div>
@@ -23,19 +23,19 @@
                 Por favor, actualiza la información de la empresa a continuación.
             </h1>
         </div>
-        <div class="col-span-1">
+    <div class="col-span-1">
             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
             <input type="text" name="nombre" id="nombre" value="{{ old('nombre', $empresas->nombre) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5" required>
         </div>
-        <div class="col-span-1">
+    <div class="col-span-1">
             <label for="direccion" class="block mb-2 text-sm font-medium text-gray-900">Dirección</label>
             <input type="text" name="direccion" id="direccion" value="{{ old('direccion', $empresas->direccion) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5" required>
         </div>
-        <div class="col-span-1">
+    <div class="col-span-1">
             <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Teléfono</label>
             <input type="text" name="telefono" id="telefono" value="{{ old('telefono', $empresas->telefono) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5" required>
         </div>
-        <div class="col-span-1">
+    <div class="col-span-1">
             <label for="estado" class="block mb-2 text-sm font-medium text-gray-900">Estado</label>
             <select name="estado" id="estado" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5">
                 <option value="activo" {{ old('estado', $empresas->estado) == 'activo' ? 'selected' : '' }}>Activo</option>
