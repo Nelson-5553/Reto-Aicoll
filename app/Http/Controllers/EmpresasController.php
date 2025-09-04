@@ -75,6 +75,9 @@ class EmpresasController extends Controller
      */
     public function destroy(Empresas $empresas)
     {
+        if ($empresas->estado === 'activo') {
+            return redirect()->route('empresas.index')->with('error', 'No puede Borrar una Empresa Activa.');
+        }
         $empresas->delete();
         return redirect()->route('empresas.index')->with('success', 'Empresa eliminada exitosamente.');
     }
