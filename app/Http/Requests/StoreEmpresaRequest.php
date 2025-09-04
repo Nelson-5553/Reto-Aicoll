@@ -11,7 +11,7 @@ class StoreEmpresaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,9 @@ class StoreEmpresaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nit' => 'required|string|max:255|unique:empresas',
             'nombre' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
             'telefono' => 'required|string|max:255',
-            'estado' => 'required|string|in:activo,inactivo',
         ];
     }
 }

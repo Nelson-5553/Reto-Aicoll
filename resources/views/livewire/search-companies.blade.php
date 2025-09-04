@@ -36,7 +36,7 @@
                             <td class="px-6 py-4">{{ $empresa->direccion }}</td>
                             <td class="px-6 py-4">{{ $empresa->telefono }}</td>
                             <td class="px-6 py-4">
-                                @if ($empresa->estado === 'Activo')
+                                @if ($empresa->estado === 'activo')
                                     <span
                                         class="bg-[#4A1A5C] text-white text-xs font-medium me-2 px-2.5 py-1 rounded-sm">{{ $empresa->estado }}</span>
                                 @else

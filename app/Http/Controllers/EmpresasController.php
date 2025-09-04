@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Empresas;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreEmpresaRequest;
+use App\Helpers\NitHelper;
+
 
 class EmpresasController extends Controller
 {
@@ -29,10 +32,16 @@ class EmpresasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function store(StoreEmpresaRequest $request)
+{
+    $empresas = new Empresas();
+    $empresas->nit = NitHelper::generarNIT();
+    $empresas->fill($request->validated());
+    $empresas->save();
+
+    return redirect()->back()->with('success', 'Empresa creada exitosamente.');
+}
+
 
     /**
      * Display the specified resource.
