@@ -54,7 +54,7 @@
                                             <h3 id="dangerModalTitle"
                                                 class="mb-2 font-semibold tracking-wide text-neutral-900">
                                                 Desactivar Empresa</h3>
-                                            <p>¿Estás seguro de que deseas desactivar esta empresa? Es requerido realizar esta acción.</p>
+                                            <p>La empresa {{ $empresa->nombre }} está activa. Es requerido desactivarla para ser eliminada.</p>
                                         </div>
                                         <div class="flex items-center justify-center border-neutral-300 p-4">
                                             <button x-on:click="dangerModalIsOpen = false" type="button"

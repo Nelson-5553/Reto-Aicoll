@@ -13,7 +13,7 @@
           </div>
         </div>
         <!-- Lado derecho -->
-        <div class="flex flex-col items-end">
+        <div class="hidden md:block flex-col items-end">
           <h1 class="text-3xl font-bold text-purple-700"><span class="text-[#D946EF]">&lt;</span> aicoll <span class="text-[#D946EF]">/&gt;</span></h1>
         </div>
       </div>
