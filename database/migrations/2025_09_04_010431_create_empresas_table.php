@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nit')->unique();
             $table->string('nombre');
             $table->string('direccion');
-            $table->string('telefono');
+            $table->integer('telefono');
             $table->string('estado')->default('activo');
             $table->timestamps();
         });

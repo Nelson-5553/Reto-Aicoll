@@ -14,6 +14,19 @@ class DeleteEmpresaTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
+    protected User $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // Crear usuario para autenticación si es necesario
+        $this->user = User::factory()->create();
+    }
+
+    /**
+     * Test que verifica que se puede eliminar una empresa inactiva.
+     */
     public function test_puede_eliminar_empresa_inactiva(): void
     {
         // Arrange

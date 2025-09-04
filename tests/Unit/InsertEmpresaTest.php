@@ -189,6 +189,22 @@ class InsertEmpresaTest extends TestCase
     }
 
     /**
+     * Test que verifica que la inserción falla con tipo de dato incorrecto.
+     */
+    public function test_verificar_que_falla_por_tipo_dato_invalido(): void
+    {
+        // Arrange & Act & Assert
+        $this->expectException(\Illuminate\Database\QueryException::class);
+
+        Empresas::create([
+            'nit' => NitHelper::generarNIT(),
+            'nombre' => 'Empresa Test',
+            'direccion' => 'Direccion Test',
+            'telefono' => 'fgdfg123456789'
+        ]);
+    }
+
+    /**
      * Test que verifica los timestamps automáticos.
      */
     public function test_timestamps_se_crean_automaticamente(): void
