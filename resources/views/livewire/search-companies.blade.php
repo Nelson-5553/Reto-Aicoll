@@ -10,16 +10,16 @@
 
     <div class="relative overflow-x-auto mt-10">
         <table
-            class="w-full text-sm text-left rtl:text-right text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
+            class="w-full text-sm text-left rtl:text-right text-gray-600 border border-purple-200 rounded-xl shadow-md overflow-hidden">
             <!-- Encabezado -->
-            <thead class="text-xs uppercase bg-purple-100 text-purple-800">
+            <thead class="text-xs uppercase bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800">
                 <tr>
-                    <th scope="col" class="px-6 py-3">NIT</th>
-                    <th scope="col" class="px-6 py-3">Nombre</th>
-                    <th scope="col" class="px-6 py-3">Dirección</th>
-                    <th scope="col" class="px-6 py-3">Teléfono</th>
-                    <th scope="col" class="px-6 py-3">Estado</th>
-                    <th scope="col" class="px-6 py-3">Acciones</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">NIT</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">Nombre</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">Dirección</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">Teléfono</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">Estado</th>
+                    <th scope="col" class="px-6 py-3 font-semibold tracking-wide">Acciones</th>
                 </tr>
             </thead>
 
@@ -31,11 +31,11 @@
                     </tr>
                 @else
                     @foreach ($empresas as $empresa)
-                        <tr class="bg-white hover:bg-purple-50">
-                            <td class="px-6 py-4 font-medium text-gray-900">{{ $empresa->nit }}</td>
-                            <td class="px-6 py-4">{{ $empresa->nombre }}</td>
-                            <td class="px-6 py-4">{{ $empresa->direccion }}</td>
-                            <td class="px-6 py-4">{{ $empresa->telefono }}</td>
+                        <tr class="bg-white hover:bg-purple-50 transition-all duration-150 border-b border-purple-100 last:border-b-0">
+                            <td class="px-6 py-4 font-medium text-purple-900">{{ $empresa->nit }}</td>
+                            <td class="px-6 py-4 text-purple-800">{{ $empresa->nombre }}</td>
+                            <td class="px-6 py-4 text-gray-700">{{ $empresa->direccion }}</td>
+                            <td class="px-6 py-4 text-gray-700">{{ $empresa->telefono }}</td>
                             <td class="px-6 py-4">
                                 @if ($empresa->estado === 'activo')
                                     <span
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="flex items-center justify-center border-neutral-300 p-4">
                                             <button x-on:click="dangerModalIsOpen = false" type="button"
-                                                class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Volver</button>
+                                                class="w-full whitespace-nowrap rounded-sm border border-purple-500 bg-purple-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 active:opacity-100 active:outline-offset-0">Volver</button>
                                         </div>
                                     @else
                                         <div class="px-4 text-center">
@@ -73,7 +73,7 @@
                                             @method('DELETE')
                                             <div class="flex items-center justify-center border-neutral-300 p-4">
                                                 <button x-on:click="dangerModalIsOpen = false" type="submit"
-                                                    class="w-full whitespace-nowrap rounded-sm border border-red-500 bg-red-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Eliminar Empresa</button>
+                                                    class="w-full whitespace-nowrap rounded-sm border border-purple-500 bg-purple-500 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">Eliminar Empresa</button>
                                             </div>
                                         </form>
                                     @endif

@@ -10,7 +10,7 @@
   </head>
   <body >
     <x-nav-bar />
-    <div class="max-w-4xl mx-auto p-4">
+    <div class="max-w-5xl mx-auto p-4">
         @yield('content')
     </div>
     @livewireScripts

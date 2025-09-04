@@ -16,7 +16,7 @@
             <!-- Dialog Header -->
             <div
                 class="flex items-center justify-between border-b border-neutral-300 bg-neutral-50/60 px-4 py-2">
-                <div class="flex items-center justify-center rounded-full bg-red-500/20 text-red-500 p-1">
+                <div class="flex items-center justify-center rounded-full bg-purple-500/20 text-purple-500 p-1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-6"
                         aria-hidden="true">
                         <path fill-rule="evenodd"
