@@ -28,4 +28,21 @@ class UpdateEmpresaRequest extends FormRequest
             'estado' => 'required|in:activo,inactivo',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'nombre.required' => 'El campo nombre es obligatorio.',
+            'nombre.string' => 'El nombre debe ser una cadena de texto.',
+            'nombre.max' => 'El nombre no puede tener más de 255 caracteres.',
+            'direccion.required' => 'El campo dirección es obligatorio.',
+            'direccion.string' => 'La dirección debe ser una cadena de texto.',
+            'direccion.max' => 'La dirección no puede tener más de 255 caracteres.',
+            'telefono.required' => 'El campo teléfono es obligatorio.',
+            'telefono.numeric' => 'El teléfono debe ser un número válido.',
+            'telefono.min' => 'El teléfono debe ser un número positivo.',
+            'estado.required' => 'El campo estado es obligatorio.',
+            'estado.in' => 'El estado debe ser "activo" o "inactivo".',
+        ];
+    }
 }
