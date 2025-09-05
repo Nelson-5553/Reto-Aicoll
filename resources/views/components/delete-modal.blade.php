@@ -1,8 +1,17 @@
 <div x-data="{ dangerModalIsOpen: false }">
-    <button x-on:click="dangerModalIsOpen = true" type="button"
-        class="whitespace-nowrap rounded-sm text-center text-sm font-medium tracking-wide cursor-pointer text-red-500 transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">
-        <x-heroicon-o-trash class="w-6 h-6" />
-    </button>
+    <div x-data="{ showTooltip: false }" class="relative inline-block">
+        <button x-on:mouseenter="showTooltip = true" x-on:mouseleave="showTooltip = false"
+            x-on:focus="showTooltip = true" x-on:blur="showTooltip = false"
+            x-on:click="dangerModalIsOpen = true" type="button"
+            class="whitespace-nowrap rounded-sm text-center text-sm font-medium tracking-wide cursor-pointer text-red-500 transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 active:opacity-100 active:outline-offset-0">
+            <x-heroicon-o-trash class="w-6 h-6" />
+        </button>
+        <div x-show="showTooltip" x-transition
+            class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 rounded bg-white text-neutral-900 text-xs z-40 whitespace-nowrap"
+            style="display: none;">
+            Eliminar
+        </div>
+    </div>
     <div x-cloak x-show="dangerModalIsOpen" x-transition.opacity.duration.200ms
         x-trap.inert.noscroll="dangerModalIsOpen" x-on:keydown.esc.window="dangerModalIsOpen = false"
         x-on:click.self="dangerModalIsOpen = false"

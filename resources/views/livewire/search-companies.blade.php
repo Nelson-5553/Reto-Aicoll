@@ -46,7 +46,24 @@
                                 @endif
                             </td>
                             <td class="flex flex-row px-6 py-4 gap-2">
-                                <a href="{{ route('empresas.edit', $empresa) }}" class="text-blue-500"><x-heroicon-o-pencil-square class="w-6 h-6" /></a>
+                                <div class="relative w-fit" x-data="{ showTooltip: false }">
+                                    <a href="{{ route('empresas.edit', $empresa) }}" class="text-blue-500"
+                                        @mouseenter="showTooltip = true"
+                                        @mouseleave="showTooltip = false"
+                                        @focus="showTooltip = true"
+                                        @blur="showTooltip = false"
+                                        aria-describedby="tooltipExample">
+                                        <x-heroicon-o-pencil-square class="w-6 h-6" />
+                                    </a>
+                                    <div id="tooltipExample"
+                                        x-show="showTooltip"
+                                        x-transition
+                                        class="absolute -top-9 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap rounded-sm bg-neutral-950 px-2 py-1 text-center text-sm text-white dark:bg-white dark:text-neutral-900"
+                                        role="tooltip"
+                                        style="display: none;">
+                                        Editar empresa
+                                    </div>
+                                </div>
                                 <x-delete-modal>
                                     <!-- Dialog Body -->
                                     @if ($empresa->estado === 'activo')
