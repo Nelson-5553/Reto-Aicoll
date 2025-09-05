@@ -23,6 +23,7 @@ class SearchCompanies extends Component
         $search = $this->search;
         $query = Empresas::query();
 
+        // Aplicar filtro de búsqueda si hay un término de búsqueda
         if (!empty($search)) {
             $query->where(function($q) use ($search) {
                 $q->where('nombre', 'LIKE', "%{$search}%")
