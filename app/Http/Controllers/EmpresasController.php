@@ -28,7 +28,7 @@ class EmpresasController extends Controller
    public function store(StoreEmpresaRequest $request)
 {
     $empresas = new Empresas();
-    $empresas->nit = NitHelper::generarNIT();
+    $empresas->nit = NitHelper::generarNIT(); // Genera un NIT con DV
     $empresas->fill($request->validated());
     $empresas->save();
 
@@ -57,9 +57,11 @@ class EmpresasController extends Controller
      */
     public function destroy(Empresas $empresas)
     {
+        // Validar que la empresa no esté activa antes de eliminarla
         if ($empresas->estado === 'activo') {
             return redirect()->route('empresas.index')->with('error', 'No puede Borrar una Empresa Activa.');
         }
+
         $empresas->delete();
         return redirect()->route('empresas.index')->with('success', 'Empresa eliminada exitosamente.');
     }
