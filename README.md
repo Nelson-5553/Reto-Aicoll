@@ -9,6 +9,8 @@ Se realizaron pruebas unitarias utilizando PHPUnit, asegurando la correcta funci
 El proyecto está disponible en el siguiente enlace:
 
 **[Enlace](https://reto-aicoll-main-zjf2ds.laravel.cloud)**
+<img width="1920" height="1440" alt="image" src="https://github.com/user-attachments/assets/491d168b-420c-4588-8b04-64fa292f5c4a" />
+
 
 ---
 
