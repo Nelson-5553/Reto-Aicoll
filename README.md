@@ -66,3 +66,28 @@ El componente `NitHelper` es responsable de la generación automática y validac
 - **Validación de unicidad**: Antes de guardar una empresa, se verifica que el NIT generado no esté duplicado en la base de datos, cumpliendo con los requisitos técnicos del reto.
 
 El uso de `NitHelper` centraliza la lógica relacionada con el NIT, facilitando el mantenimiento y la extensión del sistema en el futuro.
+
+---
+
+### Dependencias Usadas en el Proyecto
+
+El proyecto utiliza las siguientes dependencias para el desarrollo y funcionamiento tanto en el backend como en el frontend:
+
+#### Backend
+
+- **Laravel**: Framework principal para la estructura, rutas, controladores y modelos.
+- **Livewire**: Permite crear componentes dinámicos e interactivos en el frontend usando PHP.
+- **PHPUnit**: Framework de pruebas unitarias integrado en Laravel.
+
+#### Frontend
+
+- **Vite**: Herramienta moderna para la gestión y compilación de assets frontend.
+- **Tailwind CSS**: Framework de utilidades para estilos CSS y diseño responsivo.
+- **@tailwindcss/vite**: Integración de Tailwind CSS con Vite.
+- **Alpine.js**: Framework ligero para interactividad en el frontend.
+- **Flowbite**: Componentes adicionales basados en Tailwind CSS.
+- **Heroicons**: Iconografía SVG para interfaces modernas.
+
+Puedes consultar todas las dependencias y sus versiones en el archivo [`package.json`](package.json)
+
+
