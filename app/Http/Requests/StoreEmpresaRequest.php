@@ -24,7 +24,7 @@ class StoreEmpresaRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
-            'telefono' => 'required|numeric',
+            'telefono' => 'required|numeric|min:1',
         ];
     }
 }

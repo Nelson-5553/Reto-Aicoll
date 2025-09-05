@@ -24,7 +24,7 @@ class UpdateEmpresaRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
-            'telefono' => 'required|string|max:20',
+            'telefono' => 'required|numeric|min:1',
             'estado' => 'required|in:activo,inactivo',
         ];
     }
