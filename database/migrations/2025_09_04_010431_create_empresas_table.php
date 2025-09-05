@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nit')->unique();
             $table->string('nombre');
             $table->string('direccion');
-            $table->integer('telefono');
+            $table->string('telefono')->regex('/^[0-9]+$/');
             $table->string('estado')->default('activo');
             $table->timestamps();
         });
