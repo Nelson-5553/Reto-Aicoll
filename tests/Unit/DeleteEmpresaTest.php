@@ -20,7 +20,6 @@ class DeleteEmpresaTest extends TestCase
     {
         parent::setUp();
 
-        // Crear usuario para autenticación si es necesario
         $this->user = User::factory()->create();
     }
 

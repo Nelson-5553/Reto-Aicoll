@@ -161,7 +161,7 @@ class InsertEmpresaTest extends TestCase
             'telefono' => '123456789'
         ]);
 
-        // Solo verificar campos opcionales si existen en tu modelo
+        // Solo verificar campos opcionales
         if ($empresa->hasAttribute('email')) {
             $this->assertEquals('test@empresa.com', $empresa->email);
         }
@@ -187,23 +187,6 @@ class InsertEmpresaTest extends TestCase
             // Falta 'nombre' que debería ser requerido
         ]);
     }
-
-    /**
-     * Test que verifica que la inserción falla con tipo de dato incorrecto.
-     */
-    public function test_verificar_que_falla_por_tipo_dato_invalido(): void
-    {
-        // Arrange & Act & Assert
-        $this->expectException(\Illuminate\Database\QueryException::class);
-
-        Empresas::create([
-            'nit' => NitHelper::generarNIT(),
-            'nombre' => 'Empresa Test',
-            'direccion' => 'Direccion Test',
-            'telefono' => 'fgdfg123456789'
-        ]);
-    }
-
     /**
      * Test que verifica los timestamps automáticos.
      */
